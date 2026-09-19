@@ -9,7 +9,7 @@ Date: September 19, 2026
 $(document).ready(function () {
 
     /* ========================================
-    Button Click Event
+    BUTTON CLICK EVENT
     ======================================== */
 
     $("#changeButton").on("click", function () {
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
 
     /* ========================================
-    Paragraph Double-Click Event
+    PARAGRAPH DOUBLE-CLICK EVENT
     ======================================== */
 
     $("#interactiveParagraph").on("dblclick", function () {
@@ -106,7 +106,7 @@ $(document).ready(function () {
 
 
     /* ========================================
-    Image Hover Event
+    IMAGE HOVER EVENT
     ======================================== */
 
     $("#interactiveImage").on("mouseenter", function () {
@@ -143,6 +143,113 @@ $(document).ready(function () {
         $("#imageResult").text(
             "Move your mouse over the image to see jQuery move and resize it."
         );
+
+    });
+
+
+    /* ========================================
+    CONTACT FORM VALIDATION
+    ======================================== */
+
+    $("#feedback_form").validate({
+
+        rules: {
+
+            name: {
+                required: true
+            },
+
+            email: {
+                required: true,
+                email: true,
+                minlength: 8
+            },
+
+            subject: {
+                required: true
+            },
+
+            message: {
+                required: true,
+                minlength: 10
+            }
+
+        },
+
+        messages: {
+
+            name: {
+                required: "Please enter your name."
+            },
+
+            email: {
+                required: "Email is required.",
+                email: "Enter a valid email address.",
+                minlength: "Email must be at least 8 characters."
+            },
+
+            subject: {
+                required: "Please enter a subject."
+            },
+
+            message: {
+                required: "Please enter a message.",
+                minlength: "Message must be at least 10 characters."
+            }
+
+        },
+
+        invalidHandler: function (event, validator) {
+
+            let errors = validator.numberOfInvalids();
+
+            if (errors) {
+
+                $(".form_errors").text(
+                    "You missed " + errors +
+                    " required field(s). Please correct them."
+                );
+
+            } else {
+
+                $(".form_errors").text("");
+
+            }
+
+        },
+
+        /* ========================================
+        JQUERY SUBMIT BUTTON INTERACTION
+        ======================================== */
+
+        submitHandler: function (form) {
+
+            $("#submitButton")
+                .stop(true)
+                .animate({
+                    width: "160px",
+                    padding: "15px"
+                }, 300)
+                .text("Sending...");
+
+            setTimeout(function () {
+
+                $("#submitButton")
+                    .animate({
+                        width: "140px",
+                        padding: "10px"
+                    }, 300)
+                    .text("Submitted!");
+
+                $("#formResult").text(
+                    "jQuery handled the form submission successfully!"
+                );
+
+                $(form).find("input, textarea").prop("disabled", true);
+
+            }, 800);
+
+        }
 
     });
 
