@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     $("#changeButton").on("click", function () {
 
-        $(this).animate({
+        $(this).stop(true).animate({
             width: "180px",
             padding: "15px"
         }, 300)
@@ -24,7 +24,7 @@ $(document).ready(function () {
         }, 300);
 
         $("#buttonResult").text(
-            "jQuery animated the button! Click it again to see the effect."
+            "jQuery animated the button!"
         );
 
     });
@@ -38,7 +38,7 @@ $(document).ready(function () {
 
         if ($(this).hasClass("expanded")) {
 
-            $(this).animate({
+            $(this).stop(true).animate({
                 fontSize: "16px",
                 padding: "15px"
             }, 400);
@@ -56,7 +56,7 @@ $(document).ready(function () {
 
         } else {
 
-            $(this).animate({
+            $(this).stop(true).animate({
                 fontSize: "24px",
                 padding: "25px"
             }, 400);
@@ -88,8 +88,13 @@ $(document).ready(function () {
             marginLeft: "100px"
         }, 500);
 
+        $(this).css({
+            "transform": "rotate(3deg)",
+            "box-shadow": "0 10px 25px rgba(0, 0, 0, 0.4)"
+        });
+
         $("#imageResult").text(
-            "jQuery moved and resized the image! Move the mouse away to restore it."
+            "jQuery moved, resized, and styled the image! Move the mouse away to restore it."
         );
 
     });
@@ -101,6 +106,11 @@ $(document).ready(function () {
             width: "400px",
             marginLeft: "0px"
         }, 500);
+
+        $(this).css({
+            "transform": "rotate(0deg)",
+            "box-shadow": "none"
+        });
 
         $("#imageResult").text(
             "Move your mouse over the image to see jQuery move and resize it."
