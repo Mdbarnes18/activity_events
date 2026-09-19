@@ -16,16 +16,44 @@ $(document).ready(function () {
 
         $(this).stop(true).animate({
             width: "180px",
-            padding: "15px"
-        }, 300)
+            padding: "15px",
+            marginLeft: "30px"
+        }, 250)
+        .animate({
+            width: "140px",
+            padding: "12px",
+            marginLeft: "0px"
+        }, 250)
+        .animate({
+            width: "160px",
+            padding: "14px",
+            marginLeft: "15px"
+        }, 250)
         .animate({
             width: "120px",
-            padding: "10px"
-        }, 300);
+            padding: "10px",
+            marginLeft: "0px"
+        }, 250);
+
+        $(this).css({
+            "transform": "rotate(5deg)"
+        });
 
         $("#buttonResult").text(
-            "jQuery animated the button!"
+            "jQuery made the button bounce and change!"
         );
+
+        setTimeout(function () {
+
+            $("#changeButton").css({
+                "transform": "rotate(0deg)"
+            });
+
+            $("#buttonResult").text(
+                "Click the button to see jQuery animate it."
+            );
+
+        }, 1500);
 
     });
 
