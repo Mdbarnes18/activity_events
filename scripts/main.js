@@ -14,26 +14,27 @@ $(document).ready(function () {
 
     $("#changeButton").on("click", function () {
 
-        $(this).stop(true).animate({
-            width: "180px",
-            padding: "15px",
-            marginLeft: "30px"
-        }, 250)
-        .animate({
-            width: "140px",
-            padding: "12px",
-            marginLeft: "0px"
-        }, 250)
-        .animate({
-            width: "160px",
-            padding: "14px",
-            marginLeft: "15px"
-        }, 250)
-        .animate({
-            width: "120px",
-            padding: "10px",
-            marginLeft: "0px"
-        }, 250);
+        $(this).stop(true)
+            .animate({
+                width: "180px",
+                padding: "15px",
+                marginLeft: "30px"
+            }, 250)
+            .animate({
+                width: "140px",
+                padding: "12px",
+                marginLeft: "0px"
+            }, 250)
+            .animate({
+                width: "160px",
+                padding: "14px",
+                marginLeft: "15px"
+            }, 250)
+            .animate({
+                width: "120px",
+                padding: "10px",
+                marginLeft: "0px"
+            }, 250);
 
         $(this).css({
             "transform": "rotate(5deg)"
@@ -194,7 +195,7 @@ $(document).ready(function () {
 
             message: {
                 required: "Please enter a message.",
-                minlength: "Message must be at least 10 characters."
+                minlength: "Please enter at least 10 characters."
             }
 
         },
@@ -218,6 +219,7 @@ $(document).ready(function () {
 
         },
 
+
         /* ========================================
         JQUERY SUBMIT BUTTON INTERACTION
         ======================================== */
@@ -227,15 +229,22 @@ $(document).ready(function () {
             $("#submitButton")
                 .stop(true)
                 .animate({
+                    marginLeft: "60px",
                     width: "160px",
                     padding: "15px"
                 }, 300)
+                .animate({
+                    marginLeft: "20px",
+                    width: "140px",
+                    padding: "12px"
+                }, 200)
                 .text("Sending...");
 
             setTimeout(function () {
 
                 $("#submitButton")
                     .animate({
+                        marginLeft: "0px",
                         width: "140px",
                         padding: "10px"
                     }, 300)

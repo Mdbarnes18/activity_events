@@ -148,6 +148,7 @@ textarea {
 }
 
 #submitButton {
+    min-width: 120px;
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
