@@ -24,14 +24,8 @@ $(document).ready(function () {
         }, 300);
 
         $("#buttonResult").text(
-            "The button was clicked and animated using jQuery!"
+            "jQuery animated the button! Click it again to see the effect."
         );
-
-        setTimeout(function () {
-            $("#buttonResult").text(
-                "Click the button to see a jQuery event in action."
-            );
-        }, 1500);
 
     });
 
@@ -55,7 +49,7 @@ $(document).ready(function () {
             });
 
             $(this).text(
-                "Double-click this paragraph to make it grow and change its appearance."
+                "jQuery restored the paragraph. Double-click to make it grow again."
             );
 
             $(this).removeClass("expanded");
@@ -73,7 +67,7 @@ $(document).ready(function () {
             });
 
             $(this).text(
-                "You double-clicked the paragraph and jQuery changed its appearance!"
+                "jQuery enlarged this paragraph! Double-click again to let jQuery shrink it back."
             );
 
             $(this).addClass("expanded");
@@ -95,7 +89,7 @@ $(document).ready(function () {
         }, 500);
 
         $("#imageResult").text(
-            "You moved the mouse over the image and jQuery animated it!"
+            "jQuery moved and resized the image! Move the mouse away to restore it."
         );
 
     });
@@ -109,7 +103,7 @@ $(document).ready(function () {
         }, 500);
 
         $("#imageResult").text(
-            "Move your mouse over the image to see it move and resize."
+            "Move your mouse over the image to see jQuery move and resize it."
         );
 
     });
