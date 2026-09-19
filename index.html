@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ========================================
+    jQuery Selectors and Events Activity
+    Name: Michael Barnes
+    Date: September 19, 2026
+    ========================================
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Using jQuery Selectors and Events</title>
+
+    <!-- Link for CSS styles -->
+    <link rel="stylesheet" href="./styles/main.css" type="text/css" />
+
+    <!-- jQuery Library -->
+    <script src="./resources/jquery.min.js"></script>
+
+    <!-- Fallback to CDN if local jQuery fails -->
+    <script>
+        if (typeof jQuery === "undefined") {
+
+            console.log("Local jQuery failed. Loading CDN version.");
+
+            document.write(
+                '<script src="https://code.jquery.com/jquery-3.7.1.min.js"><\/script>'
+            );
+
+        } else {
+
+            console.log("Local jQuery loaded successfully.");
+
+        }
+    </script>
+
+    <!-- Custom script -->
+    <script src="./scripts/main.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Using jQuery Selectors and Events</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section>
+
+            <h2>Interactive Button</h2>
+
+            <button id="changeButton" type="button">
+                Click Me
+            </button>
+
+            <p id="buttonResult">
+                Click the button to see a jQuery event in action.
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Interactive Paragraph</h2>
+
+            <p id="interactiveParagraph">
+                Double-click this paragraph to make it grow and change its appearance.
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Interactive Image</h2>
+
+            <img
+                id="interactiveImage"
+                src="https://dummyimage.com/400x250/333/ffffff&text=jQuery+Image"
+                alt="Interactive example image demonstrating a jQuery event">
+
+            <p id="imageResult">
+                Move your mouse over the image to see it move and resize.
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>jQuery Selectors Used</h2>
+
+            <dl>
+
+                <dt>#changeButton</dt>
+                <dd>
+                    The ID selector targets the button with the ID
+                    "changeButton". It allows jQuery to attach a click
+                    event to that specific button.
+                </dd>
+
+                <dt>#buttonResult</dt>
+                <dd>
+                    The ID selector targets the paragraph with the ID
+                    "buttonResult". jQuery uses it to change the text
+                    after the button is clicked.
+                </dd>
+
+                <dt>#interactiveParagraph</dt>
+                <dd>
+                    The ID selector targets the paragraph with the ID
+                    "interactiveParagraph". jQuery uses it to respond
+                    when the paragraph is double-clicked.
+                </dd>
+
+                <dt>#interactiveImage</dt>
+                <dd>
+                    The ID selector targets the image with the ID
+                    "interactiveImage". jQuery uses it to respond when
+                    the mouse moves over the image.
+                </dd>
+
+                <dt>#imageResult</dt>
+                <dd>
+                    The ID selector targets the paragraph with the ID
+                    "imageResult" so jQuery can update its text when
+                    the image interaction occurs.
+                </dd>
+
+            </dl>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>&copy; Michael Barnes 2026</p>
+
+    </footer>
+
+</body>
+
+</html>
