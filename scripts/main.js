@@ -18,7 +18,6 @@ $(document).ready(function () {
             width: "180px",
             padding: "15px"
         }, 300)
-
         .animate({
             width: "120px",
             padding: "10px"
@@ -27,6 +26,12 @@ $(document).ready(function () {
         $("#buttonResult").text(
             "The button was clicked and animated using jQuery!"
         );
+
+        setTimeout(function () {
+            $("#buttonResult").text(
+                "Click the button to see a jQuery event in action."
+            );
+        }, 1500);
 
     });
 
@@ -37,19 +42,43 @@ $(document).ready(function () {
 
     $("#interactiveParagraph").on("dblclick", function () {
 
-        $(this).animate({
-            fontSize: "24px",
-            padding: "25px"
-        }, 400);
+        if ($(this).hasClass("expanded")) {
 
-        $(this).css({
-            "background-color": "lightblue",
-            "font-weight": "bold"
-        });
+            $(this).animate({
+                fontSize: "16px",
+                padding: "15px"
+            }, 400);
 
-        $(this).text(
-            "You double-clicked the paragraph and jQuery changed its appearance!"
-        );
+            $(this).css({
+                "background-color": "#eee",
+                "font-weight": "normal"
+            });
+
+            $(this).text(
+                "Double-click this paragraph to make it grow and change its appearance."
+            );
+
+            $(this).removeClass("expanded");
+
+        } else {
+
+            $(this).animate({
+                fontSize: "24px",
+                padding: "25px"
+            }, 400);
+
+            $(this).css({
+                "background-color": "lightblue",
+                "font-weight": "bold"
+            });
+
+            $(this).text(
+                "You double-clicked the paragraph and jQuery changed its appearance!"
+            );
+
+            $(this).addClass("expanded");
+
+        }
 
     });
 
